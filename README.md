@@ -2,7 +2,9 @@
 
 已确认的西恩 Agent 设计实现：学术蓝、蓝色羽翼品牌、圆润输入框和圆形发送/停止按钮，接入 Harness 的原生对话、工程证据与工作状态。
 
-目标版本：**DeepSeek Harness 0.2.1-rc.2**，Node.js ≥22.19。这个版本使用 Cordis 官方品牌槽位、会话控制器与右侧标签页接口；其他 Harness 版本需要重新验证。
+插件 **0.1.1** 支持 **DeepSeek Harness 0.2.1-rc.2 / 0.2.1-rc.3**，Node.js ≥22.19。使用 Cordis 官方品牌槽位、会话控制器与右侧标签页接口；其他 Harness 版本需要重新验证。
+
+旧版 `0.1.0` 将引擎锁定为 `rc.2`，会被 `rc.3` 的插件管理器拒绝。遇到该提示时，请安装下面的 `0.1.1` 安装包替换旧版。
 
 ## 功能
 
@@ -17,7 +19,7 @@
 
 ## 安装
 
-本项目尚未发布到 npm。先从源码构建可安装 `.tgz`，或下载本仓库 GitHub Actions 的 `xien-dsh-ui-plugin` 构建产物：
+本项目尚未发布到 npm。先从源码构建可安装 `.tgz`，或下载本仓库 GitHub Actions 中与当前 DSH 版本对应的 `xien-dsh-ui-plugin-0.2.1-rc.3` / `xien-dsh-ui-plugin-0.2.1-rc.2` 构建产物：
 
 ```powershell
 git clone https://github.com/Scott1314866/dsh-ui-plugin.git
@@ -29,10 +31,10 @@ New-Item -ItemType Directory -Force artifacts | Out-Null
 npm.cmd pack --pack-destination artifacts
 ```
 
-在 Harness 的插件管理中安装 `artifacts/xien-dsh-ui-plugin-0.1.0.tgz` 的**绝对路径**，然后重新启动 Host / 刷新浏览器。CLI Web profile 也可安装：
+在 Harness 的插件管理中安装 `artifacts/xien-dsh-ui-plugin-0.1.1.tgz` 的**绝对路径**，然后重新启动 Host / 刷新浏览器。CLI Web profile 也可安装：
 
 ```powershell
-dsh plugin --profile web add 'D:/path/to/xien-dsh-ui-plugin-0.1.0.tgz'
+dsh plugin --profile web add 'D:/path/to/xien-dsh-ui-plugin-0.1.1.tgz'
 ```
 
 也可以使用固定提交的仓库地址：

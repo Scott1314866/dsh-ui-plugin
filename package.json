@@ -1,6 +1,6 @@
 {
   "name": "@xien/dsh-ui-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "西恩科技 Agent 工作台：学术蓝品牌主题、原生会话、工程证据与实时工作状态",
   "type": "module",
   "license": "MIT",
@@ -40,7 +40,7 @@
   },
   "engines": {
     "node": ">=22.19",
-    "dsh": "0.2.1-rc.2"
+    "dsh": "0.2.1-rc.2 || 0.2.1-rc.3"
   },
   "scripts": {
     "build": "node scripts/build.mjs",
@@ -54,29 +54,29 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "~4.0.5",
-    "@deepseek-ai/dsh-skill": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-tools": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-web": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-working-directory": "0.2.1-rc.2"
+    "@deepseek-ai/dsh-skill": "0.2.1-rc.2 || 0.2.1-rc.3",
+    "@deepseek-ai/dsh-tools": "0.2.1-rc.2 || 0.2.1-rc.3",
+    "@deepseek-ai/dsh-web": "0.2.1-rc.2 || 0.2.1-rc.3",
+    "@deepseek-ai/dsh-working-directory": "0.2.1-rc.2 || 0.2.1-rc.3"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "~3.18.5",
     "linkedom": "^0.18.12"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-api-session-controller": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-store": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-chat": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-conversation": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-layout": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-renderer": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-session": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-settings": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-sidebar": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-sidebar-right": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-slots": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-workspace": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-util-workspace-path": "0.2.1-rc.2",
+    "@deepseek-ai/dsh-api-session-controller": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-store": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-chat": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-conversation": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-layout": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-renderer": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-session": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-settings": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-sidebar": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-sidebar-right": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-workspace": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-util-workspace-path": "0.2.1-rc.3",
     "@types/node": "^24.0.0",
     "@types/react": "^18.3.0",
     "esbuild": "^0.25.0",
@@ -85,12 +85,13 @@
     "react-dom": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "playwright": "^1.58.0",
-    "@deepseek-ai/dsh-brand": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-llm": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-session": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-api-remote-access": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-client-ui-primitives": "0.2.1-rc.2",
-    "@deepseek-ai/dsh-system-prompt": "0.2.1-rc.2"
+    "@deepseek-ai/dsh-brand": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-llm": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-session": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-api-remote-access": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-primitives": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-system-prompt": "0.2.1-rc.3",
+    "semver": "^7.7.2"
   },
   "repository": {
     "type": "git",
