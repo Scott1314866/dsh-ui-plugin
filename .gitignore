@@ -1,0 +1,10 @@
+node_modules/
+artifacts/
+.runtime/
+.env
+.env.*
+*.tgz
+*.log
+playwright-report/
+test-results/
+.DS_Store

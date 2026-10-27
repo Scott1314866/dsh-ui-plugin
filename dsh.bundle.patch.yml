@@ -1,0 +1,3 @@
+- insert:
+    - id: xien-ui
+      name: './lib/index.js'

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": true
+  },
+  "include": ["src/index.ts", "src/engine.ts", "src/sdk.ts", "src/privacy.ts", "src/types.ts", "src/model.ts", "src/navigation.ts", "tests/**/*.ts"]
+}
