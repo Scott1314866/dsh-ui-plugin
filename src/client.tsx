@@ -34,6 +34,7 @@ const empty: SessionEventWindow = {
 }
 const noEvents: SessionEventSource = { getSnapshot: () => empty, subscribe: () => () => {} }
 type EvidenceFace = { events: SessionEventSource; openEvidence: (turn?: number) => void }
+type StatusProps = PropsRuntime<'conversation.input.dock'> & InjectFace<EvidenceFace>
 type TailProps = PropsRuntime<'conversation.chat.turnTail'> & InjectFace<EvidenceFace>
 type HeaderProps = PropsRuntime<'conversation.session.header.utilities'> & InjectFace<EvidenceFace>
 interface PanelFace {
@@ -89,6 +90,22 @@ function Header(props: HeaderProps) {
       <EvidenceIcon />
       工程证据
     </button>
+  )
+}
+function ComposerStatus(props: StatusProps) {
+  const snapshot = props.useSession((value) => value)
+  const window = useWindow(props.events)
+  const waiting = props.useSessionStatus(
+    (value) => !!value.get(props.sessionId)?.pendingInteraction,
+  )
+  const state = useMemo(
+    () => workState(snapshot, window.entries, waiting),
+    [snapshot, window, waiting],
+  )
+  return (
+    <div className="xien-composer-status">
+      <WorkBar state={state} />
+    </div>
   )
 }
 function Tail(props: TailProps) {
@@ -525,6 +542,12 @@ export function apply(ctx: Context): void {
   )
   ctx.slots.inject('conversation.hero.brand.mark', () =>
     ctx.slots.register({ name: 'conversation.hero.brand.mark', priority: -100 }, HeroBrand),
+  )
+  ctx.slots.inject('conversation.input.dock', () =>
+    ctx.slots.register(
+      { name: 'conversation.input.dock', id: 'xien-work-status', order: 90, inject: face },
+      ComposerStatus,
+    ),
   )
   ctx.slots.inject('conversation.session.header.utilities', () =>
     ctx.slots.register(

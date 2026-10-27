@@ -22,6 +22,8 @@ body.xien-ui [data-composer-card] button[class*="_primary"]:has(rect):after{cont
 body.xien-ui [data-slot="sidebar"] button[class*="_newSession"]{border-radius:999px!important;border:1px solid #d4dff2;background:#fff;color:#002fa7}
 body.xien-ui [data-slot="sidebar"] button[class*="_panel"],body.xien-ui [data-slot="sidebar"] [class*="_sessionRow"]{border-radius:12px}
 body.xien-ui [data-slot="sidebar.brand.name"]{min-width:0}
+.xien-composer-status{box-sizing:border-box;width:100%;padding:0 var(--dsh-composer-side-clearance,16px)}
+.xien-composer-status>.xien-workbar{box-sizing:border-box;width:100%;max-width:var(--dsh-composer-card-max-width,952px);margin:0 auto;padding:6px 4px 8px}
 .xien-hero-brand{display:inline-flex;align-items:center;gap:10px;color:#19345a;white-space:nowrap}
 .xien-hero-title{font:400 28px/1.4 'Microsoft YaHei','Helvetica Neue',sans-serif;letter-spacing:.3px}
 body.xien-ui [class*="_fishHitbox"]:has(.xien-hero-brand){width:auto;height:auto;display:inline-flex;overflow:visible}

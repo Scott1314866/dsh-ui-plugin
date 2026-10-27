@@ -1,6 +1,6 @@
 {
   "name": "@xien/dsh-ui-plugin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "西恩科技 Agent 工作台：学术蓝品牌主题、原生会话、工程证据与实时工作状态",
   "type": "module",
   "license": "MIT",
