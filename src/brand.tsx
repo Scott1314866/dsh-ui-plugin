@@ -23,6 +23,14 @@ export function BrandName() {
     </span>
   )
 }
+export function HeroBrand({ size = 34 }: { size?: number }) {
+  return (
+    <span className="xien-hero-brand" role="heading" aria-level={1}>
+      <BrandMark size={size} />
+      <span className="xien-hero-title">高端伺服领军者</span>
+    </span>
+  )
+}
 export function EvidenceIcon() {
   return (
     <svg viewBox="0 0 20 20" aria-hidden="true">

@@ -13,7 +13,7 @@ import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
 import type {} from '@deepseek-ai/dsh-client-ui-chat/client'
 import type {} from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
 import { fileAddressFor } from '@deepseek-ai/dsh-util-workspace-path'
-import { BrandMark, BrandName, EvidenceIcon } from './brand.tsx'
+import { BrandMark, BrandName, HeroBrand, EvidenceIcon } from './brand.tsx'
 import { theme } from './theme.ts'
 import { projectTurns, workState, exportTrace, externalUrl, redact } from './model.ts'
 import type { WindowEntry, Turn, WorkState } from './model.ts'
@@ -34,7 +34,6 @@ const empty: SessionEventWindow = {
 }
 const noEvents: SessionEventSource = { getSnapshot: () => empty, subscribe: () => () => {} }
 type EvidenceFace = { events: SessionEventSource; openEvidence: (turn?: number) => void }
-type StatusProps = PropsRuntime<'conversation.input.dock'> & InjectFace<EvidenceFace>
 type TailProps = PropsRuntime<'conversation.chat.turnTail'> & InjectFace<EvidenceFace>
 type HeaderProps = PropsRuntime<'conversation.session.header.utilities'> & InjectFace<EvidenceFace>
 interface PanelFace {
@@ -60,7 +59,7 @@ function useTime(state: WorkState) {
   const value = Math.max(0, ((state.ended ?? now) - state.started) / 1000)
   return `${value.toFixed(value < 10 ? 1 : 0)} s`
 }
-export function WorkBar({ state, action }: { state: WorkState; action?: () => void }) {
+export function WorkBar({ state }: { state: WorkState }) {
   const elapsed = useTime(state)
   return (
     <div
@@ -76,28 +75,8 @@ export function WorkBar({ state, action }: { state: WorkState; action?: () => vo
       <span className="xien-clock" aria-live="off">
         {elapsed}
       </span>
-      {action && (
-        <button
-          type="button"
-          className="xien-evidence-button"
-          onClick={action}
-          aria-label="打开工程证据"
-        >
-          <EvidenceIcon />
-        </button>
-      )}
     </div>
   )
-}
-function Status(props: StatusProps) {
-  const snapshot = props.useSession((v) => v),
-    window = useWindow(props.events),
-    waiting = props.useSessionStatus((v) => !!v.get(props.sessionId)?.pendingInteraction)
-  const state = useMemo(
-    () => workState(snapshot, window.entries, waiting),
-    [snapshot, window, waiting],
-  )
-  return <WorkBar state={state} action={() => props.openEvidence()} />
 }
 function Header(props: HeaderProps) {
   return (
@@ -545,13 +524,7 @@ export function apply(ctx: Context): void {
     ctx.slots.register({ name: 'sidebar.brand.name', priority: -100 }, BrandName),
   )
   ctx.slots.inject('conversation.hero.brand.mark', () =>
-    ctx.slots.register({ name: 'conversation.hero.brand.mark', priority: -100 }, BrandMark),
-  )
-  ctx.slots.inject('conversation.input.dock', () =>
-    ctx.slots.register(
-      { name: 'conversation.input.dock', id: 'xien-work-status', order: 90, inject: face },
-      Status,
-    ),
+    ctx.slots.register({ name: 'conversation.hero.brand.mark', priority: -100 }, HeroBrand),
   )
   ctx.slots.inject('conversation.session.header.utilities', () =>
     ctx.slots.register(

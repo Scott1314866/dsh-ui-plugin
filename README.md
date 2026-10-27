@@ -2,16 +2,16 @@
 
 已确认的西恩 Agent 设计实现：学术蓝、蓝色羽翼品牌、圆润输入框和圆形发送/停止按钮，接入 Harness 的原生对话、工程证据与工作状态。
 
-插件 **0.1.1** 支持 **DeepSeek Harness 0.2.1-rc.2 / 0.2.1-rc.3**，Node.js ≥22.19。使用 Cordis 官方品牌槽位、会话控制器与右侧标签页接口；其他 Harness 版本需要重新验证。
+插件 **0.1.2** 支持 **DeepSeek Harness 0.2.1-rc.2 / 0.2.1-rc.3**，Node.js ≥22.19。使用 Cordis 官方品牌槽位、会话控制器与右侧标签页接口；其他 Harness 版本需要重新验证。
 
-旧版 `0.1.0` 将引擎锁定为 `rc.2`，会被 `rc.3` 的插件管理器拒绝。遇到该提示时，请安装下面的 `0.1.1` 安装包替换旧版。
+旧版 `0.1.0` 将引擎锁定为 `rc.2`，会被 `rc.3` 的插件管理器拒绝。遇到该提示时，请安装下面的 `0.1.2` 安装包替换旧版。
 
 ## 功能
 
 - **真实对话**：使用 Harness 原生聊天、流式回答、模型选择、文件附件、消息队列与审批；不再使用设计预览中的假对话或定时状态模拟。
-- **西恩品牌与学术蓝**：官方 `sidebar.brand.mark`、`sidebar.brand.name`、`conversation.hero.brand.mark` 槽位；品牌 SVG 自包含。主题局限于插件激活期间，卸载后恢复原主题。
+- **西恩品牌与学术蓝**：新会话欢迎语为“高端伺服领军者”，隐藏原生欢迎语及其“预览版”徽标。官方 `sidebar.brand.mark`、`sidebar.brand.name`、`conversation.hero.brand.mark` 槽位；品牌 SVG 自包含。主题局限于插件激活期间，卸载后恢复原主题。
 - **圆形发送/停止**：只改变原生按钮样式，发送、停止、Enter、队列与审批行为继续由 Harness 处理。原生停止按钮带进度环，尊重系统减少动态效果的设置。
-- **真实工作状态**：根据 Host `running`、待处理交互、工具调用、工具结果及 `turn/end.reason` 显示提交、检索、读取、执行、回答、等待确认、完成、停止、中断和异常。计时仅显示已观测时间，不制造进度或完成状态。
+- **真实工作状态**：输入框上方不再显示独立状态提示栏，运行状态集中在工程证据面板。根据 Host `running`、待处理交互、工具调用、工具结果及 `turn/end.reason` 显示提交、检索、读取、执行、回答、等待确认、完成、停止、中断和异常。计时仅显示已观测时间，不制造进度或完成状态。
 - **工程证据**：对话头部「工程证据」进入原生右侧标签页，内含相关资料、调用链、资料连接。默认跟随最新回合，也可以选择历史回合。回合之间不混用来源。
 - **真实资料工具**：包含只读 `hpm_search` / `hpm_read`、HPM 工程知识 Skill、官方知识库、本地项目版本 SDK 和授权团队手册服务适配器；不覆盖原生搜索和文件工具。
 
@@ -31,10 +31,10 @@ New-Item -ItemType Directory -Force artifacts | Out-Null
 npm.cmd pack --pack-destination artifacts
 ```
 
-在 Harness 的插件管理中安装 `artifacts/xien-dsh-ui-plugin-0.1.1.tgz` 的**绝对路径**，然后重新启动 Host / 刷新浏览器。CLI Web profile 也可安装：
+在 Harness 的插件管理中安装 `artifacts/xien-dsh-ui-plugin-0.1.2.tgz` 的**绝对路径**，然后重新启动 Host / 刷新浏览器。CLI Web profile 也可安装：
 
 ```powershell
-dsh plugin --profile web add 'D:/path/to/xien-dsh-ui-plugin-0.1.1.tgz'
+dsh plugin --profile web add 'D:/path/to/xien-dsh-ui-plugin-0.1.2.tgz'
 ```
 
 也可以使用固定提交的仓库地址：
