@@ -1,5 +1,5 @@
 {
-  "extends":"./tsconfig.json",
-  "include":["src/client.tsx","src/brand.tsx","src/theme.ts","src/model.ts","src/types.ts"],
-  "exclude":["src/index.ts","tests"]
+  "extends": "./tsconfig.json",
+  "include": ["src/client.tsx", "src/brand.tsx", "src/theme.ts", "src/model.ts", "src/types.ts"],
+  "exclude": ["src/index.ts", "tests"]
 }

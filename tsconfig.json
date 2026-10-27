@@ -9,5 +9,14 @@
     "jsx": "react-jsx",
     "skipLibCheck": true
   },
-  "include": ["src/index.ts", "src/engine.ts", "src/sdk.ts", "src/privacy.ts", "src/types.ts", "src/model.ts", "src/navigation.ts", "tests/**/*.ts"]
+  "include": [
+    "src/index.ts",
+    "src/engine.ts",
+    "src/sdk.ts",
+    "src/privacy.ts",
+    "src/types.ts",
+    "src/model.ts",
+    "src/navigation.ts",
+    "tests/**/*.ts"
+  ]
 }
